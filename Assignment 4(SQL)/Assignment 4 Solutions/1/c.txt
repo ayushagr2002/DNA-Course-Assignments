@@ -1,0 +1,1 @@
+select * from POINT order by (x*x + y*y + z*z) asc limit k; 

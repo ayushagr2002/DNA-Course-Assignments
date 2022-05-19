@@ -1,0 +1,6 @@
+CREATE TABLE ROTATED as(
+SELECT rotated_x, rotated_y, rotated_z from
+(select (x*array1 +y*array2 + z*array3) as rotated_x, x, y, z from POINT join (select * from ROTATE where link='x') as xtable) as x,
+(select (x*array1 +y*array2 + z*array3) as rotated_y, x, y, z from POINT join (select *from ROTATE where link='y') as ytable) as y,
+(select (x*array1 +y*array2 + z*array3) as rotated_z, x, y,z form POINT join (select * from ROTATE where link='z') as ztable) as z
+where (x.x=z.x) and (x.x=y.x) and (x.y=z.y) and (x.y=y.y) and (x.z=z.z) and(x.z=y.z));

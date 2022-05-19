@@ -1,0 +1,2 @@
+highest point : select * from POINT order by z desc limit 1; 
+lowest point : select * from POINT order by z asc limit 1;

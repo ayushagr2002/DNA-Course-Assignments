@@ -1,0 +1,1 @@
+SELECT DOC_ID, sum(score) as PhraseScore from ( select WORD, FREQ/TOTAL_COUNT as score, DOC_ID from ( select WORD, FREQ, TOTAL_COUNT, INVINDEX.DOC_ID from INVINDEX , (SELECT count(WORD), sum(FREQ) as TOTAL_COUNT, DOC_ID from INVINDEX group by DOC_ID ) as state1 where INVINDEX.DOC_ID = state1.doc_id ) as state2 where word= "Hello" or word= "World" ) as state2 group by DOC_ID;

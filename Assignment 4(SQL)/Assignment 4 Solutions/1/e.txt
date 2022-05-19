@@ -1,0 +1,5 @@
+CREATE TABLE ROTATE (array1 float , array2 float , array3 float , link varchar(2)); 
+Assuming alpha is 10, 
+INSERT INTO ROTATE values ( cos(10),-sin(10),0,'x'); 
+INSERT INTO ROTATE values (sin(10),cos(10),0,'y'); 
+INSERT INTO ROTATE values (0,0,1,'z'); 

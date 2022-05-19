@@ -1,0 +1,1 @@
+select * from POINT order by x asc, y asc, z asc ;

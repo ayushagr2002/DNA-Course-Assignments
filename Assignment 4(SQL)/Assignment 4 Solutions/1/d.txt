@@ -1,0 +1,1 @@
+select sum(x)/count(x),sum(y)/count(y),sum(z)/count(z) from POINT;

@@ -1,0 +1,1 @@
+SELECT word,sum(score)/count(*) as avgscore FROM(SELECT word,freq/totalfreq as score ,doc_id FROM(SELECT word,freq,totalfreq,INVINDEX.doc_id FROM INVINDEX,(SELECT count(word),sum(freq) as totalfreq,doc_id FROM INVINDEX group by doc_id) as buffer1 WHERE buffer1.doc_id=INVINDEX.doc_id)as buffer2) buffer3 group by word order by avgscore desc;
